@@ -1,0 +1,135 @@
+---
+title: "SiqueiraCampos_wk7"
+author: "Marco Siqueira Campos"
+date: "15 de outubro de 2016"
+output: html_document
+---
+
+DATA 607  
+MSDA CUNY  
+
+PROJECT 2  
+ASSIGNMENT WK7 
+Working with XML and JSON in R
+
+All files are in the Github
+github [link](https://github.com/MarcoSCampos/DATA607_wk7)
+
+load library
+```{r load_library, warning=FALSE, message=FALSE}
+library(XML)
+library(rjson)
+library(RCurl)
+```
+
+
+The first was develop the code files with same information about books.
+
+All was made by hand with Notepad++ editor, I try to follow the same struture for the data, as the strutures are different (table vs. tree) is not possible to do with absolute fidelity.
+
+First html code and output display from firefox browser.
+
+![html code1](https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books_html1.png)
+![html code1](https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books_html2.png)
+
+
+
+Html browser output
+![browser output](https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books_html3.png)
+
+
+Next XML code was generated.
+![xml code](https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books_xml.png)
+
+
+Next JSON code was generated.
+![json code](https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books_json.png)
+
+
+Read html file from github
+```{r read_html}
+url<-getURL("https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books.html")
+c<-readHTMLTable(url,header=TRUE, as.data.frame=TRUE,TRIM=TRUE,stringsAsFactors = FALSE)
+```
+
+remove column NULL and extract data frame from a list
+```{r org_df}
+new_c<-as.data.frame(c$'NULL')
+```
+
+Check the data frame
+```{r str}
+str(new_c)
+```
+
+Check one book
+```{r check}
+new_c[1,]
+```
+
+The html data frame
+```{r html_data_frame}
+new_c
+```
+
+
+Read xml file from github
+```{r read_xml}
+url1<-getURL("https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books.xml")
+parsed_xml<-xmlParse(url1)
+```
+
+Check raw xml file
+```{r check_xml}
+parsed_xml
+```
+
+Convert xml to data frame
+```{r xml_df}
+books_df<-xmlToDataFrame(parsed_xml)
+```
+
+View xml data frame
+```{r view_xml_df}
+books_df
+```
+
+
+Read json file from github
+```{r read_json}
+url2<-getURL("https://raw.githubusercontent.com/MarcoSCampos/DATA607_wk7/master/books.json")
+```
+
+
+Convert json file
+```{r conv_json}
+books_json<-fromJSON(url2)
+```
+
+Convert to a data frame
+```{r dataframe_json}
+books_json.df<-as.data.frame(books_json, stringsAsFactors = FALSE)
+```
+
+check the file
+```{r check_json}
+str(books_json.df)
+```
+
+
+See the data frame
+```{r view_dfjson}
+books_json.df
+```
+
+##Conclusion:
+Are the three data frames identical? No. 
+
+Working with the minimum manipulation the three files are differents. 
+The html table and xml was so close but not identical, the difference was in the missing values, in one case we have NA and other "", for the same function getURL.
+The data frame from Json is very different from the others, is more a list than a data table, needs more work to tidying.
+I do not organized the data frame json, because I understood that the assignment goal was to compare the structures and the results, as tidying would be identical, and the goal here was to see the differences.
+
+
+
+
