@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Siqueira Campos assignment xml file-->
+<library>
+	    <book_1>
+		<name>The art of R Programming</name>
+		<author_1>Normam S. Matoff</author_1>
+		<isbn>978-1-59327-384-2</isbn>
+		<pages>373</pages>
+		<publisher>No Stark Inc</publisher>
+		<date>2011</date>
+	</book_1>
+	<book_2>
+		<name>The elements of statistical learning</name>
+		<author_1>Trevor Hastie</author_1>
+		<author_2>Robert Tibshirani</author_2>
+		<author_3>Jerome Friedman</author_3>
+		<isbn>978-0-387-84857-0</isbn>
+		<pages>745</pages>
+		<publisher>Springer</publisher>
+		<date>2009</date>
+	</book_2>
+	<book_3>
+		<name>Applied predictive modeling </name>
+		<author_1>Max Kuhn</author_1>
+		<author_2>Kjell Johnson</author_2>
+		<isbn>978-1-4614-6848-6</isbn>
+		<pages>600</pages>
+		<publisher>Springer</publisher>
+		<date>2013</date>
+	</book_3>	
+</library>
