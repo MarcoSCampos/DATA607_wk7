@@ -6,3 +6,4 @@
 ### books_html1.png - html code picture
 ### books_html2.png - html code picture
 ### books_html3.png - browser output picture
+### books_xml.png    - xml editor picture 
