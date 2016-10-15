@@ -1,0 +1,31 @@
+{
+   "library": {
+      "book_1": {
+         "name": "The art of R Programming",
+         "author_1": "Normam S. Matoff",
+         "isbn": "978-1-59327-384-2",
+         "pages": "373",
+         "publisher": "No Stark Inc",
+         "date": "2011"
+      },
+      "book_2": {
+         "name": "The elements of statistical learning",
+         "author_1": "Trevor Hastie",
+         "author_2": "Robert Tibshirani",
+         "author_3": "Jerome Friedman",
+         "isbn": "978-0-387-84857-0",
+         "pages": "745",
+         "publisher": "Springer",
+         "date": "2009"
+      },
+      "book_3": {
+         "name": "Applied predictive modeling",
+         "author_1": "Max Kuhn",
+         "author_2": "Kjell Johnson",
+         "isbn": "978-1-4614-6848-6",
+         "pages": "600",
+         "publisher": "Springer",
+         "date": "2013"
+      }
+   }
+}
